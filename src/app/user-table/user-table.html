@@ -1,0 +1,60 @@
+<app-error-toast />
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    @if (users().length > 0) {
+      @for (user of users(); track user.id) {
+        <!-- Clicking row takes us to the edit page for user -->
+        <tr [routerLink]="['edit', user.id]">
+          <td class="user-id-cell">
+            <div class="flex">
+              @if (isWithinMonth(user.createdAt)) {
+                <span class="new-user">New User</span>
+              }
+              <span class="user-id">{{ user.id }}</span>
+            </div>
+          </td>
+          <td>{{ user.firstName }}</td>
+          <td>{{ user.lastName }}</td>
+          <!-- format dates in UTC since no timezone is given -->
+          <td>{{ user.createdAt | date:'mediumDate':'+0000' }}</td>
+        </tr>
+      }
+    } @else {
+      <!-- Show placeholders when loading -->
+      <tr>
+        <td class="placeholder-cell"></td>
+        <td class="placeholder-cell"></td>
+        <td class="placeholder-cell"></td>
+        <td class="placeholder-cell"></td>
+      </tr>
+      <tr>
+        <td class="placeholder-cell"></td>
+        <td class="placeholder-cell"></td>
+        <td class="placeholder-cell"></td>
+        <td class="placeholder-cell"></td>
+      </tr>
+      <tr>
+        <td class="placeholder-cell"></td>
+        <td class="placeholder-cell"></td>
+        <td class="placeholder-cell"></td>
+        <td class="placeholder-cell"></td>
+      </tr>
+      <tr>
+        <td class="placeholder-cell"></td>
+        <td class="placeholder-cell"></td>
+        <td class="placeholder-cell"></td>
+        <td class="placeholder-cell"></td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+<router-outlet />

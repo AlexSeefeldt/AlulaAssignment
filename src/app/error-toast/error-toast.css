@@ -1,0 +1,12 @@
+dialog {
+  top: 20px;
+  border-color: red;
+  color: darkred;
+  transition: all 200ms;
+  cursor: pointer;
+  max-width: 40ch;
+  &:not([open]) {
+    display: block;
+    transform: translateY(calc(-100% - 20px));
+  }
+}

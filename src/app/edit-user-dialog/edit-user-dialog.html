@@ -1,0 +1,11 @@
+<dialog #dialog (cancel)="close()">
+  <h1>Account Information</h1>
+  <button class="close-button" (click)="close()">×</button>
+  <form>
+    <label>First Name: <input autofocus [field]="userForm.firstName" /></label>
+    <label>Last Name: <input [field]="userForm.lastName" /></label>
+    <label>Username: <input [field]="userForm.username" /></label>
+    <label>Password: <input type="password" [field]="userForm.password" /></label>
+    <button class="save-button" (click)="submit()">Save</button>
+  </form>
+</dialog>
