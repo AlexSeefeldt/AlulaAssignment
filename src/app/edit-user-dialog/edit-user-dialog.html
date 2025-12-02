@@ -1,11 +1,11 @@
-<dialog #dialog (cancel)="close()">
-  <h1>Account Information</h1>
-  <button class="close-button" (click)="close()">×</button>
-  <form>
-    <label>First Name: <input autofocus [field]="userForm.firstName" /></label>
-    <label>Last Name: <input [field]="userForm.lastName" /></label>
-    <label>Username: <input [field]="userForm.username" /></label>
-    <label>Password: <input type="password" [field]="userForm.password" /></label>
-    <button class="save-button" (click)="submit()">Save</button>
+<dialog class="transition-all transition-discrete duration-200 starting:translate-y-5 mx-auto top-20 p-4 border-stone-300 border-2 rounded-lg bg-amber-50 shadow-lg" #dialog (cancel)="close()">
+  <h1 class="font-bold mb-5 text-2xl">Account Information</h1>
+  <button class="absolute right-2 top-2 w-4 h-4 p-0 flex items-center justify-center m-0 cursor-pointer" (click)="close()">×</button>
+  <form class="flex flex-col gap-1">
+    <label class="mb-2">First Name: <input class="bg-[#fcfcfc] border-stone-500 border-solid border rounded-sm px-1" autofocus [field]="userForm.firstName" /></label>
+    <label class="mb-2">Last Name: <input class="bg-[#fcfcfc] border-stone-500 border-solid border rounded-sm px-1" [field]="userForm.lastName" /></label>
+    <label class="mb-2">Username: <input class="bg-[#fcfcfc] border-stone-500 border-solid border rounded-sm px-1" [field]="userForm.username" /></label>
+    <label class="mb-2">Password: <input class="bg-[#fcfcfc] border-stone-500 border-solid border rounded-sm px-1" type="password" [field]="userForm.password" /></label>
+    <button class="bg-amber-400 border self-center px-5 cursor-pointer hover:bg-amber-300 transition-all shadow-sm hover:shadow-md" (click)="submit()">Save</button>
   </form>
 </dialog>

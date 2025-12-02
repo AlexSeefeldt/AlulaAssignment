@@ -10,7 +10,6 @@ import { UserService } from '../user.service';
   standalone: true,
   imports: [DatePipe, RouterLink, RouterOutlet, ErrorToast],
   templateUrl: './user-table.html',
-  styleUrl: './user-table.css'
 })
 export class UserTableComponent {
   private api = inject(UserService);

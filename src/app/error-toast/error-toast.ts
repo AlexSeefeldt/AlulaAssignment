@@ -6,7 +6,6 @@ import { UserService } from '../user.service';
   standalone: true,
   imports: [],
   templateUrl: './error-toast.html',
-  styleUrl: './error-toast.css',
 })
 export class ErrorToast {
   private api: UserService = inject(UserService);

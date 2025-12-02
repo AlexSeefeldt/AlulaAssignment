@@ -18,7 +18,6 @@ interface UserFormData {
   standalone: true,
   imports: [Field],
   templateUrl: './edit-user-dialog.html',
-  styleUrl: './edit-user-dialog.css'
 })
 export class EditUserDialogComponent {
   private api = inject(UserService);

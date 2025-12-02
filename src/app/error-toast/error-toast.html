@@ -1,3 +1,3 @@
-<dialog [open]="show()" (click)="reset()">
+<dialog [class]="`top-5 border-red-800 border-2 py-2 px-3 transition-all duration-200 cursor-pointer max-w-75 mx-auto block ${show() ? '' : 'translate-y-[calc(-100%-var(--spacing)*5)]'}`" [open]="show()" (click)="reset()">
   {{ error() }}
 </dialog>
